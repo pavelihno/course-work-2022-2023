@@ -23,11 +23,3 @@ RUN curl -sS https://getcomposer.org/installer | php -- \
     --install-dir=/usr/local/bin
 
 WORKDIR /var/www
-
-COPY package.json ./
-COPY package-lock.json ./
-COPY composer.json ./
-COPY composer.lock ./
-
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - &&\
-    apt-get install -y nodejs
