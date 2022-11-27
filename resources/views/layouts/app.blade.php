@@ -7,7 +7,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'BlogAgg') }}</title>
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -69,6 +70,12 @@
                         @endguest
                     </ul>
                 </div>
+                @foreach(config('app.available_locales') as $locale)
+                    <a class="nav-link @if($locale === app()->getLocale()) disabled @endif"
+                       href="{{ route('locale', ['locale' => $locale]) }}">
+                        {{ strtoupper($locale) }}
+                    </a>
+                @endforeach
             </div>
         </nav>
 
