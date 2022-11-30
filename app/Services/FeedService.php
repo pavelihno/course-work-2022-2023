@@ -32,4 +32,9 @@ class FeedService
         return FeedReader::read($url)->get_items();
     }
 
+    public function getBlogTitle($url): String
+    {
+        return FeedReader::read($url)->get_title();
+    }
+
 }

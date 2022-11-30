@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Blog;
 
-use App\Models\Blog;
 use Illuminate\Http\Request;
 
 class IndexController extends BaseController
@@ -12,11 +11,16 @@ class IndexController extends BaseController
         $user = $request->user();
         $blogs = $this->blogService->getAllByUser($user);
         $latestBlogs = array();
+        $blogsNames = array();
 
         foreach ($blogs as $blog) {
-            $latestBlogs[$blog->id] = $this->feedService->getBlogs($blog->url)[0];
+            $blogId = $blog->id;
+            $url = $blog->url;
+
+            $latestBlogs[$blogId] = $this->feedService->getBlogs($url)[0];
+            $blogsNames[$blogId] = $this->feedService->getBlogTitle($url);
         }
 
-        return view('blogs.index', compact('latestBlogs'));
+        return view('blogs.index', compact('latestBlogs', 'blogsNames'));
     }
 }

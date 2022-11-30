@@ -6,13 +6,15 @@
         <a class="btn btn-primary" href="{{ route('blogs.create') }}">{{ __('Add blog') }}</a>
     </div>
 
-    <div class="row">
+    <div class="card-columns">
         @foreach($latestBlogs as $id => $latestBlog)
-            <div class="col-sm-6">
+            <div>
                 <div class="card mb-2">
                     <div class="card-body">
                         <h5 class="card-title">{{ $latestBlog->get_title() }}</h5>
                         <div class="card-text">{!! $latestBlog->get_content() !!}</div>
+                        <hr>
+                        <a href="{{ route('blogs.show', ['blog' => $id]) }}">{{ __('More by') }} {{ $blogsNames[$id] }}</a>
                     </div>
                 </div>
             </div>

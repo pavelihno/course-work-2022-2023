@@ -24,5 +24,6 @@
     "The url must be a string.": "Ссылка должна быть строкой.",
     "The url field is required.": "Ссылка должна быть заполнена.",
     "Entered url is not a valid RSS": "Ссылка не является корректной ссылкой на RSS",
-    "URL": "Ссылка"
+    "URL": "Ссылка",
+    "More by": "Ещё от"
 }
