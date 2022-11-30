@@ -8,6 +8,6 @@ class CreateController extends BaseController
 {
     public function __invoke()
     {
-        // TODO: Implement __invoke() method.
+        return view('blogs.create');
     }
 }

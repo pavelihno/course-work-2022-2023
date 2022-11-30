@@ -15,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect('home');
+    return to_route('blogs.index');
 });
+
+Route::get('/home', function () {
+    return to_route('blogs.index');
+})->name('home');
 
 Route::get('language/{locale}', function ($locale) {
     app()->setLocale($locale);
@@ -36,4 +40,3 @@ Route::group(['namespace' => 'Blog'], function() {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

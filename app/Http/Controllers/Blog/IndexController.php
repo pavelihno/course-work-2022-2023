@@ -2,14 +2,21 @@
 
 namespace App\Http\Controllers\Blog;
 
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
 class IndexController extends BaseController
 {
-    public function __invoke()
+    public function __invoke(Request $request)
     {
-        dd(app()->getLocale());
+        $user = $request->user();
+        $blogs = $this->blogService->getAllByUser($user);
+        $latestBlogs = array();
 
-        return view('home');
+        foreach ($blogs as $blog) {
+            $latestBlogs[$blog->id] = $this->feedService->getBlogs($blog->url)[0];
+        }
+
+        return view('blogs.index', compact('latestBlogs'));
     }
 }

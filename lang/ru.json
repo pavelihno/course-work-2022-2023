@@ -18,5 +18,11 @@
     "A fresh verification link has been sent to your email address.": "На ваш адрес электронной почты отправлена новая ссылка для подтверждения.",
     "Before proceeding, please check your email for a verification link.": "Прежде чем продолжить, проверьте свою электронную почту на наличие ссылки для подтверждения.",
     "If you did not receive the email": "Если вы не получили письмо",
-    "click here to request another": "нажмите здесь, чтобы запросить другое"
+    "click here to request another": "нажмите здесь, чтобы запросить другое",
+    "Add blog": "Добавить блог",
+    "Create": "Создать",
+    "The url must be a string.": "Ссылка должна быть строкой.",
+    "The url field is required.": "Ссылка должна быть заполнена.",
+    "Entered url is not a valid RSS": "Ссылка не является корректной ссылкой на RSS",
+    "URL": "Ссылка"
 }

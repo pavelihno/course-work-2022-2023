@@ -9,5 +9,6 @@ class BlogUser extends Model
 {
     use HasFactory;
 
-    protected $table = 'blog';
+    protected $table = 'users_blogs';
+    protected $guarded = false;
 }
