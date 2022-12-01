@@ -14,8 +14,8 @@ class FeedService
 
         if ($validatorResponse) {
             if (stristr($validatorResponse , 'This is a valid RSS feed') !== false ) {
-                $blogs = $this->getBlogs($url);
-                if ($blogs && $blogs[0]->get_content())
+                $articles = $this->getArticles($url);
+                if ($articles && $articles[0]->get_content())
                     return true;
                 else
                     return false;
@@ -27,7 +27,7 @@ class FeedService
             return false;
     }
 
-    public function getBlogs($url): array
+    public function getArticles($url): array
     {
         return FeedReader::read($url)->get_items();
     }

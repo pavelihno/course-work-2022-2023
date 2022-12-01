@@ -10,17 +10,18 @@ class IndexController extends BaseController
     {
         $user = $request->user();
         $blogs = $this->blogService->getAllByUser($user);
-        $latestBlogs = array();
-        $blogsNames = array();
+
+        $latestArticles = array();
+        $articlesNames = array();
 
         foreach ($blogs as $blog) {
             $blogId = $blog->id;
             $url = $blog->url;
 
-            $latestBlogs[$blogId] = $this->feedService->getBlogs($url)[0];
-            $blogsNames[$blogId] = $this->feedService->getBlogTitle($url);
+            $latestArticles[$blogId] = $this->feedService->getArticles($url)[0];
+            $articlesNames[$blogId] = $this->feedService->getBlogTitle($url);
         }
 
-        return view('blogs.index', compact('latestBlogs', 'blogsNames'));
+        return view('blogs.index', compact('latestArticles', 'articlesNames'));
     }
 }

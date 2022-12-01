@@ -14,7 +14,12 @@ class BlogService
 
     public function __construct(FeedService $feedService)
     {
-        $this->feedService =$feedService;
+        $this->feedService = $feedService;
+    }
+
+    public function getById(int $blogId)
+    {
+        return Blog::find($blogId);
     }
 
     public function getAll(): Collection
