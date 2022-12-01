@@ -33,8 +33,6 @@ Route::group(['namespace' => 'Blog'], function() {
     Route::get('/blogs/create', 'CreateController')->name('blogs.create');
     Route::post('/blogs', 'StoreController')->name('blogs.store');
     Route::get('/blogs/{blog}', 'ShowController')->name('blogs.show');
-    Route::get('/blogs/{blog}/edit', 'EditController')->name('blogs.edit');
-    Route::patch('/blogs/{blog}', 'UpdateController')->name('blogs.update');
     Route::delete('/blogs/{blog}', 'DestroyController')->name('blogs.destroy');
 });
 

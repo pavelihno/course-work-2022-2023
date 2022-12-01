@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="container">
-        <form class="float-right" method="post" action="{{ route('blogs.destroy', $blog->id) }}">
+        <form onsubmit="confirm('{{__('Delete blog?')}}')" class="float-right" method="post" action="{{ route('blogs.destroy', $blog->id) }}">
             @csrf
             @method('delete')
-            <button type="submit" class="btn btn-danger">{{ __('Delete') }}</button>
+            <button type="submit" class="btn btn-danger" onclick="">{{ __('Delete') }}</button>
         </form>
         <div class="row mb-3">
             <h3 class="mr-5">{{ $blogTitle }}</h3>
@@ -23,6 +23,5 @@
             @endforeach
         </div>
     </div>
-
 
 @endsection

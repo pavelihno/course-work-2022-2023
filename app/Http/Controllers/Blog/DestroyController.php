@@ -6,8 +6,12 @@ use Illuminate\Http\Request;
 
 class DestroyController extends BaseController
 {
-    public function __invoke()
+    public function __invoke(Request $request, $blogId)
     {
-        // TODO: Implement __invoke() method.
+        $blog = $this->blogService->getById($blogId);
+
+        $this->blogService->delete($request->user(), $blog);
+
+        return to_route('blogs.index');
     }
 }
