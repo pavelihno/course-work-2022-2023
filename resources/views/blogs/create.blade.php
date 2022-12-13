@@ -13,7 +13,7 @@
             <span class="text-danger">{{ __($message) }}</span>
             @enderror
         </div>
-        <button class="btn btn-primary" type="submit">{{ __('Create') }}</button>
+        <button class="btn btn-primary" type="submit">{{ __('Add') }}</button>
     </form>
 </div>
 

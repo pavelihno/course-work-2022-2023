@@ -9,7 +9,7 @@
         </form>
         <div class="row mb-3">
             <h3 class="mr-5">{{ $blogTitle }}</h3>
-            <a class="btn btn-primary" href="{{ $url }}">{{ __('Go to source') }}</a>
+            <a class="btn btn-primary" href="{{ $blogUrl }}">{{ __('Go to source') }}</a>
         </div>
 
         <div class="mb-2">
@@ -17,7 +17,7 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <h5 class="card-title">{{ $article->get_title() }}</h5>
-                        <div class="card-text">{!! $article->get_content() !!}</div>
+                        <div class="card-text" style="overflow: hidden;">{!! $article->get_content() !!}</div>
                     </div>
                 </div>
             @endforeach

@@ -12,7 +12,7 @@
                     <div class="card mb-2">
                         <div class="card-body">
                             <h5 class="card-title">{{ $latestArticle->get_title() }}</h5>
-                            <div class="card-text">{!! $latestArticle->get_content() !!}</div>
+                            <div class="card-text" style="overflow: hidden;">{!! $latestArticle->get_content() !!}</div>
                             <hr>
                             <a href="{{ route('blogs.show', ['blog' => $id]) }}">{{ __('More by') }} {{ $articlesNames[$id] }}</a>
                         </div>
