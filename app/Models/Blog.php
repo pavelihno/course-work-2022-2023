@@ -10,5 +10,7 @@ class Blog extends Model
     use HasFactory;
 
     protected $table = 'blogs';
-    protected $guarded = false;
+    protected $fillable = [
+        'url'
+    ];
 }

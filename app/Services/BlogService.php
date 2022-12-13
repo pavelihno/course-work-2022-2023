@@ -66,10 +66,7 @@ class BlogService
     public function delete(User $user, Blog $blog): bool
     {
         $blogUser = BlogUser::where(['user_id' => $user->id, 'blog_id' => $blog->id])->first();
-        return $blog->delete();
+        return $blogUser->delete();
     }
-
-
-
 
 }

@@ -10,5 +10,8 @@ class BlogUser extends Model
     use HasFactory;
 
     protected $table = 'users_blogs';
-    protected $guarded = false;
+    protected $fillable = [
+        'blog_id',
+        'user_id'
+    ];
 }

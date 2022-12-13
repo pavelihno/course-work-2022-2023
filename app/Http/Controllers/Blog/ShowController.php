@@ -13,12 +13,13 @@ class ShowController extends BaseController
         if (!$blog)
             abort(404);
 
-        $url = $blog->url;
+        $rssUrl = $blog->url;
+        $blogUrl = $this->feedService->getBlogLink($rssUrl);
 
-        $articles = $this->feedService->getArticles($url);
+        $articles = $this->feedService->getArticles($rssUrl);
 
-        $blogTitle = $this->feedService->getBlogTitle($url);
+        $blogTitle = $this->feedService->getBlogTitle($rssUrl);
 
-        return view('blogs.show', compact('url', 'blog', 'articles', 'blogTitle'));
+        return view('blogs.show', compact('blogUrl', 'blog', 'articles', 'blogTitle'));
     }
 }
